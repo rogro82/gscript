@@ -1,0 +1,40 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.Sherlock.Light.DarkActionBar"></style>
+
+    <!-- Application theme. -->
+    <style name="DialogTheme" parent="Theme.Sherlock.Dialog">
+    </style>
+    
+    <style name="TextLarge" parent="@android:style/TextAppearance">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextMedium" parent="@android:style/TextAppearance">
+        <item name="android:textSize">14sp</item>
+    </style>
+    
+    <style name="TextSmall" parent="@android:style/TextAppearance">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+	<style name="DividerHorizontal">
+    	<item name="android:layout_width">match_parent</item>
+    	<item name="android:layout_height">1dp</item>
+    	<item name="android:background">?android:attr/listDivider</item>
+	</style>    
+    
+	<style name="DividerVertical">
+    	<item name="android:layout_width">1dp</item>
+    	<item name="android:layout_height">match_parent</item>
+    	<item name="android:background">?android:attr/listDivider</item>
+	</style>    
+
+	<style name="DialogButton">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">12dip</item>
+        <item name="android:paddingRight">12dip</item>
+        <item name="android:scaleType">center</item>
+	</style>
+	
+</resources>

@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        style="@style/TextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/item_attributes_shell_profile" />
+
+    <Spinner android:id="@+id/spinnerShellProfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         >
+    </Spinner>
+
+    <CheckBox
+        android:id="@+id/checkBoxAttributeUnattended"
+        style="@style/TextMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:text="@string/item_attributes_unattended" />
+
+</LinearLayout>

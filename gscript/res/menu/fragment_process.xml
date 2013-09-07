@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_process_start"
+        android:title="@string/menu_process_start"
+        android:icon="@drawable/ic_content_new"
+        android:showAsAction="ifRoom">
+        <menu></menu>
+    </item>    
+    
+    
+    <item
+        android:id="@+id/menu_process_kill_active"
+        android:title="@string/menu_process_kill_active"
+        android:icon="@drawable/ic_kill"
+        android:showAsAction="never" />    
+    
+</menu>

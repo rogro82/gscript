@@ -1,0 +1,5 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:state_checked="true" android:drawable="@color/softinput_button_bg_selected" />
+	<item android:state_pressed="true" android:drawable="@drawable/abs__list_activated_holo" />
+	<item android:drawable="@color/softinput_button_bg" />
+</selector>

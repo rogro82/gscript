@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="alias1_title">Terminal</string>
+    <string name="alias2_title">sh</string>
+    <string name="alias3_title">su</string>
+    
+    <string-array name="alias_titles">
+        <item>@string/alias1_title</item>
+        <item>@string/alias2_title</item>
+        <item>@string/alias3_title</item>
+    </string-array>
+</resources>

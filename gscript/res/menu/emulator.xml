@@ -1,0 +1,33 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item 
+        android:id="@+id/menu_emulator_input"
+        android:title="@string/menu_emulator_softinput"
+        android:icon="@drawable/ic_osk"
+        android:showAsAction="ifRoom">
+        <menu>
+    	<item 
+        	android:id="@+id/menu_emulator_softinput"
+        	android:title="@string/menu_emulator_softinput" />
+    	<item 
+        	android:id="@+id/menu_emulator_softinput_additional"
+        	android:title="@string/menu_emulator_additional_softinput" />
+    	<item
+    	    android:id="@+id/menu_emulator_gesture_mode"
+    	    android:title="@string/menu_emulator_cursor_mode" />
+    	</menu>
+    </item>
+    
+    <item 
+        android:id="@+id/menu_emulator_autoscroll"
+        android:title="@string/menu_emulator_autoscroll"
+        android:icon="@drawable/ic_autoscroll_enabled"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_emulator_kill"
+        android:title="@string/menu_emulator_kill"
+        android:icon="@drawable/ic_kill"        
+        android:showAsAction="never" />    
+    
+</menu>

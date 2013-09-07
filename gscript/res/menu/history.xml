@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_history_email"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/ic_email"
+        android:title="@string/send_email"/>
+
+</menu>

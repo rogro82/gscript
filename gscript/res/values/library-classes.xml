@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="library_classes">
+        <item>org.gscript.data.library.LocalStorageLibrary</item>
+        <item>org.gscript.data.library.GoogleDriveLibrary</item>
+    </string-array>
+</resources>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.gscript"
+    android:versionCode="3"
+    android:versionName="1.0.0-alpha3" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> 
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" /> 
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>     
+	<uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+	
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        
+        <activity
+            android:name="org.gscript.MainActivity"
+            android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="org.gscript.ExecuteDialog"
+            android:label="@string/app_name"
+            android:theme="@style/DialogTheme"
+            android:launchMode="singleInstance"
+            >
+            
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="file" />
+                <data android:mimeType="*/*" />
+                <data android:pathPattern=".*\\.sh" />
+                <data android:host="*" />
+            </intent-filter>
+            
+            <intent-filter>
+                <action android:name="org.gscript.action.SHORTCUT" />
+                <data android:scheme="content" />
+            </intent-filter>
+            
+        </activity>        
+
+        <activity
+            android:name="org.gscript.input.InputDialog"
+            android:label="@string/app_name"
+            android:theme="@style/DialogTheme" 
+            android:launchMode="singleInstance" />        
+        
+        <activity 
+            android:name="org.gscript.EmulatorActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance" />
+
+        <activity
+            android:name="org.gscript.LibraryActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="org.gscript.LibraryItemActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="org.gscript.HistoryActivity"
+            android:label="@string/app_name" />
+        
+        <activity
+            android:name="org.gscript.ScheduleActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:label="@string/app_name" />
+        
+        <activity
+            android:name="org.gscript.SettingsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Sherlock" />
+        
+        <activity
+            android:name="ProfileAliasActivity"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+
+        <!-- aliases -->
+        
+        <activity-alias
+            android:name="org.gscript.ProfileAlias1"
+            android:icon="@drawable/ic_launcher"
+            android:enabled="false"
+            android:label="@string/alias1_title"
+            android:targetActivity="org.gscript.ProfileAliasActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="org.gscript.ProfileAlias2"
+            android:icon="@drawable/ic_launcher"
+            android:enabled="false"
+            android:label="@string/alias2_title"
+            android:targetActivity="org.gscript.ProfileAliasActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        
+        <activity-alias
+            android:name="org.gscript.ProfileAlias3"
+            android:icon="@drawable/ic_launcher"
+            android:enabled="false"
+            android:label="@string/alias3_title"
+            android:targetActivity="org.gscript.ProfileAliasActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        
+        <service
+            android:name="org.gscript.process.ProcessService"
+            android:enabled="true"
+            android:exported="false"
+             />
+
+        <provider
+            android:name="org.gscript.data.HistoryProvider"
+            android:authorities="org.gscript.history"
+            android:exported="false" />
+
+        <provider
+            android:name="org.gscript.data.ScheduleProvider"
+            android:authorities="org.gscript.schedule"
+            android:exported="false" />
+        
+        <provider
+            android:name="org.gscript.data.LibraryProvider"
+            android:authorities="org.gscript.library"
+            android:exported="false" />
+        
+		<receiver 
+		    android:name="org.gscript.receiver.ActionReceiver" 
+		    android:enabled="true"
+		    android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="org.gscript.action.EXEC" />
+                <data android:scheme="file" />
+            </intent-filter>
+        </receiver> 
+               
+		<receiver 
+		    android:name="org.gscript.receiver.ScheduleReceiver"
+		    android:enabled="true"
+		    android:exported="false"
+		    >
+		    <intent-filter>
+		        <action android:name="org.gscript.action.RESCHEDULE" />
+		    </intent-filter>
+		    <intent-filter>
+		        <action android:name="org.gscript.action.ALARM" />
+		    </intent-filter>		    
+		</receiver>
+		
+		<receiver 
+		    android:name="org.gscript.input.InputReceiver"
+		    android:enabled="true"
+		    android:exported="false"
+		    >
+		    <intent-filter>
+		        <action android:name="org.gscript.action.INPUT_REQUEST" />
+		        <data android:scheme="ipc" />
+ 		    </intent-filter>
+ 		    <intent-filter>
+		        <action android:name="org.gscript.action.INPUT_RESPONSE" />
+ 		    </intent-filter>
+		</receiver>
+		
+    </application>
+
+</manifest>

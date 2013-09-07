@@ -1,0 +1,5 @@
+<resources>
+    <color name="softinput_button_bg">#ff333333</color>
+    <color name="softinput_button_bg_selected">#ff555555</color>
+    <color name="softinput_button_bg_pressed">#ff33b5e5</color>
+</resources>
